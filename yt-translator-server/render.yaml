@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: yt-translator-backend
+    env: python
+    region: frankfurt
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python server.py"
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
