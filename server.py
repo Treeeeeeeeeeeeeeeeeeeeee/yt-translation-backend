@@ -8,7 +8,7 @@ CORS(app)
 
 PORT = int(os.environ.get("PORT", 5000))
 
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+OPENAI_API_KEY = os.environ.get("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")
 
 @app.route("/translate", methods=["POST"])
 def translate():
@@ -22,7 +22,7 @@ def translate():
     url = "https://api.openai.com/v1/chat/completions"
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {OPENAI_API_KEY}"
+        "Authorization": f"Bearer {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}"
     }
 
     payload = {
@@ -40,4 +40,5 @@ def translate():
     return jsonify({"translated": translated})
 
 if __name__ == "__main__":
+
     app.run(host="0.0.0.0", port=PORT)
